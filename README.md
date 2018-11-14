@@ -1,26 +1,20 @@
-# Open eHealth Integration Platform
+# IHE XDS and openEHR Integration Prototype Test Client
 
-[![Build Status](https://travis-ci.org/oehf/ipf.svg?branch=master)](https://travis-ci.org/oehf/ipf)
+**Disclaimer:** This code is research code and documents the prototype developed as part of my master's thesis.
 
-## IPF Overview
+The prototype client allows to execute two exemplary functions. First, an openEHR composition can be submitted using the openEHR REST API. Second, a combination of ITI-18 and ITI-43 can be invoked to query and retrieve that very same composition again. 
 
-The eHealth Integration Framework (IPF) is an extension of the Apache Camel routing and mediation engine and comes with
-comprehensive support for message processing and connecting information systems in the healthcare sector.
-It is available under the Apache License version 2.0.
+The prototype server is required to run, so the client can connect to it. All configurations of ports and endpoints are static and meant for local use only.
 
-IPF focuses on a domain-specific language (DSL) to implement Enterprise Integration Patterns (EIPs) in integration solutions.
-IPF is based on the Java and Groovy programming languages for application development and for designing project-specific DSLs.
+## Origin
+Forked from [IPF iheclient tutorial](https://github.com/oehf/ipf/tree/d0f35cfad926f616c74ea542fdca4c906234afe8/tutorials/iheclient).
 
-IPF provides highl-level building blocks for implementing IHE profiles such as XDS, PIX, PDQ or XCPD.
-Other supported standards are HL7v2 and HL7v3 (CDA and CCD) for which IPF provides domain-specific languages (DSLs) for
-creation, parsing, rendering, navigation and modification.
+## Dependencies
 
-## Documentation
+- Java 1.8
+- Maven
 
-The IPF 3 documentation is located at [github](http://oehf.github.io/ipf).
-There's also a somewhat outdated [Introductory article](https://architects.dzone.com/articles/introduction-open-ehealth).
+## Run
 
-## Mailing Lists
-
-* [ipf-dev](https://groups.google.com/group/ipf-dev)
-* [ipf-user](https://groups.google.com/group/ipf-user)
+1. run `mvn package -Dmaven.test.failure.ignore=true`
+2. run `java -jar target/ipf-tutorials-iheclient-3.6-SNAPSHOT.jar` 
